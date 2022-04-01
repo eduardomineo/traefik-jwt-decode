@@ -91,6 +91,7 @@ default configurations
 CLAIM_MAPPING_FILE_PATH    = config.json
 AUTH_HEADER_KEY            = Authorization
 TOKEN_VALIDATED_HEADER_KEY = jwt-token-validated
+AUTH_HEADER_REQUIRED       = false
 PORT                       = 8080
 LOG_LEVEL                  = info                = trace | debug | info | warn | crit
 LOG_TYPE                   = json                = json | pretty
