@@ -18,7 +18,7 @@ BENCH_DIR=decoder
 
 all: clean verify build docker
 run: docker
-	docker run -e JWKS_URL='https://www.googleapis.com/oauth2/v3/certs' -v $(shell pwd)/config.json:/config.json $(DOCKER_NAME):$(TAG)
+	docker run -p 8080:8080 -e AUTH_HEADER_REQUIRED='true' -e LOG_LEVEL='debug' -e JWKS_URL='https://www.googleapis.com/oauth2/v3/certs' -v $(shell pwd)/config.json:/config.json $(DOCKER_NAME):$(TAG)
 docker: build
 	docker build $(BUILD_DIR) -t $(DOCKER_NAME):$(TAG)
 build: deps
